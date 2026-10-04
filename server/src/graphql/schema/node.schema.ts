@@ -24,11 +24,11 @@ export const typeDefs = `#graphql
 
         updateNode(
             id: ID!
-            title: String!
-            author: String!
-            year: Int!
-            genre: String!
-            publisher: String!
+            title: String
+            author: String
+            year: Int
+            genre: String
+            publisher: String
         ) : Node!
 
         deleteNode(id: ID!): Boolean!
