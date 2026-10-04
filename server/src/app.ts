@@ -7,6 +7,10 @@ import { typeDefs } from './graphql/schema/node.schema.js';
 
 const app = express();
 
+// global middlewares
+app.use(express.json());
+app.use(cors());
+
 // create graphql server
 const graphqlServer = new ApolloServer({
   typeDefs,
@@ -16,9 +20,6 @@ const graphqlServer = new ApolloServer({
 // start graphql server
 export const startGqlServer = async () => {
   await graphqlServer.start();
-
-  app.use(express.json());
-  app.use(cors());
 
   app.use('/graphql', expressMiddleware(graphqlServer));
 };
