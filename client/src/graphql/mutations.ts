@@ -13,14 +13,14 @@ export const CREATE_NODE = gql`
             author: $author
             year: $year
             genre: $genre
-            $publisher: $publisher
+            publisher: $publisher
         ) {
             id
             title
             author
             year
             genre
-            publisher    
+            publisher
         }
     }
 `;
