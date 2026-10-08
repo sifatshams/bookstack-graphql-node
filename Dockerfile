@@ -2,19 +2,19 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-# 1. Root & Workspace package files copy
+# ১. Root & Workspaces package.json copy
 COPY package.json yarn.lock ./
 COPY client/package.json ./client/
 COPY server/package.json ./server/
 
-# 2. Dependencies install
+# ২. Dependencies install
 RUN yarn install --frozen-lockfile --network-timeout 600000
 
-# 3. Source files copy (Entire monorepo copy hobe)
+# ৩. All source code copy
 COPY . .
 
-# 4. Prisma client generate (Jodi server-e Prisma thake)
-# RUN yarn workspace server prisma generate
+# ৪. TypeScript build
+RUN yarn build
 
 EXPOSE 8080
 
