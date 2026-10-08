@@ -1,14 +1,14 @@
 {
   "private": true,
   "workspaces": [
-    "client",
-    "server"
+    "book-manager-client",
+    "book-manager-server"
   ],
   "name": "node-book-manager",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn workspace server start"
+    "start": "yarn workspace book-manager-server start"
   }
 }
