@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-book-manager-container
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./server/.env
+    restart: always
