@@ -8,7 +8,7 @@ COPY client/package.json ./client/
 COPY server/package.json ./server/
 
 # ২. Dependencies install
-RUN yarn install --frozen-lockfile --network-timeout 600000
+RUN yarn install --frozen-lockfile && yarn cache clean
 
 # ৩. All source code copy
 COPY . .
